@@ -12,6 +12,12 @@ describe "Hashing" do
       expect(a.hash).to eq(a.hash)
     end
 
+    it "should hash a 2-dimensional array" do
+      a = [[]]
+      print a.hash
+      expect(a.hash).to be_a(Integer)
+    end
+
     it "should produce the same hash for two equivalent arrays" do
       a = [1, 2, 3]
       b = [1, 2, 3]

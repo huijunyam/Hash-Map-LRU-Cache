@@ -42,6 +42,13 @@ class HashMap
   end
 
   def resize!
+    temp = @store.flatten
+    @store = Array.new(num_buckets * 2) { Array.new }
+    @count = 0
+    # debugger
+    temp.each do |num|
+      self.insert(num)
+    end
   end
 
   def bucket(key)
